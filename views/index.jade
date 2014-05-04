@@ -1,0 +1,44 @@
+extends layout
+
+block content
+	include header
+	div.playerinfo
+		h3.title 我的LoL
+		div.playerRole
+			p.title 请选择您的角色
+			select(name='serverName',class='serverName')
+				option(value='电信一') 艾欧尼亚
+				option(value='电信二') 祖安
+				option(value='电信三') 诺克萨斯
+				option(value='电信四') 班德尔城
+				option(value='电信五') 皮尔特沃夫
+				option(value='电信六') 战争学院
+				option(value='电信七') 巨神峰
+				option(value='电信八') 雷瑟守备
+				option(value='电信九') 裁决之地
+				option(value='电信十') 黑色玫瑰
+				option(value='电信十一') 暗影岛
+				option(value='电信十二') 钢铁烈阳
+				option(value='电信十三') 均衡教派
+				option(value='电信十四') 水晶之痕
+				option(value='电信十五') 影流
+				option(value='电信十六') 守望之海
+				option(value='电信十七') 征服之海
+				option(value='电信十八') 卡拉曼达
+				option(value='电信十九') 皮城警备
+				option(value='网通一') 比尔吉沃特
+				option(value='网通二') 德玛西亚
+				option(value='网通三') 弗雷尔卓德
+				option(value='网通四') 无畏先锋
+				option(value='网通五') 恕瑞玛
+				option(value='网通六') 扭曲丛林
+				option(value='教育一') 教育网专区
+			input(type='text',name='playerName' class='playerName')
+			a.submit 提交
+		a.toggleShow 收起
+		script.
+			require(['index'], function(index) {
+			})
+	include footer
+
+

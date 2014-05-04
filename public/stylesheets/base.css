@@ -1,0 +1,88 @@
+* {
+    margin:0;
+    padding:0;
+}
+body {
+	font-family:Microsoft YaHei,Tahoma,simsun;
+}
+a{
+	font-size: 14px;
+	text-decoration: none;
+	color:#000;
+}
+li{
+	list-style: none;
+}
+
+h3{
+	font-size: 16px;
+}
+select{
+	font-size: 16px;
+}
+
+.header{
+	height: 60px;
+	background-color: #333;
+	color: #f2f2f2;
+	font-size: 14px;
+	line-height: 60px;
+	text-align: center;
+	box-shadow: inset 0 0 5px #000;
+	-webkit-box-shadow: inset 0 0 5px #000;
+	border-bottom: 1px solid #000;
+}
+.wrapper{
+	display: inline-block;
+	width: 1000px;
+	height: 100%;
+	position: relative;
+	text-align: left;
+}
+.wrapper .logo{
+	float: left;
+	width: 120px;
+	height: 55px;
+	background-image: url(../images/logo.png);
+	background-size: 120px auto;
+	background-repeat: no-repeat;
+	background-position: 0 13px;
+}
+.wrapper .userbox{
+	position: absolute;
+	right: 0;
+	top: 0;
+}
+.wrapper .userbox a{
+	display: block;
+	height: 60px;
+	width: 100px;
+	line-height: 60px;
+	text-align: center;
+	color: #f2f2f2;
+}
+.wrapper .userbox .box-btns-wrapper{
+	display: none;
+	background-color: #2f2f2f;
+}
+.wrapper .nav{
+	float: left;
+	margin-left: 10px;
+}
+.wrapper .nav ul{
+
+}
+.wrapper .nav ul li{
+	float: left;
+}
+.wrapper .nav ul li a{
+	text-align: center;
+	line-height: 60px;
+	display: block;
+	color:#f3be1e;
+	height: 60px;
+	width: 100px;
+}
+.wrapper .nav ul li a:hover{
+	font-size: 16px;
+}

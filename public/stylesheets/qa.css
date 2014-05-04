@@ -1,0 +1,27 @@
+.content{
+	width: 1000px;
+	margin: 25px auto;
+}
+.content .nav{
+	height: 40px;
+	background-color: #333;
+	line-height: 40px;
+	position: relative;
+}
+.content .nav a{
+	display: inline-block;
+	width: 68px;
+	line-height: 40px;
+	color:#fff;
+	text-align: center;
+	cursor: pointer;
+}
+.content .nav a.btn-ask{
+	position: absolute;
+	right: 0;
+}
+.content .question-list .question-box{
+	height: 40px;
+	background-color: #f2f2f2;
+	border: 1px solid #444;
+}

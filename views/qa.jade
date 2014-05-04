@@ -1,0 +1,20 @@
+extends layout
+block content
+	include header
+	div.content
+		div.nav
+			a.btn-new 最新
+			a.btn-hot 最热
+			a.btn-ask 我要提问
+		div.question-list
+			each question, i in questions
+				div.question-box
+					span #{question.uid}
+					span #{question.content}
+					span #{question.type}
+	include footer
+	script.
+		require(['qa'], function(index) {
+		})
+
+

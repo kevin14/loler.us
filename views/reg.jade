@@ -1,0 +1,16 @@
+extends layout
+block content
+	include header
+	div.userRegBox
+		input(class='username' name='username' type='text' placeholder='username')
+		input(class='email' name='email' type='text' placeholder='email')
+		input(class='password' name='password' type='password' placeholder='password')
+		img(class='ccapImg' src='/users/ccap?regId=#{regId}')
+		input(class='regId' name='regId' type='hidden' value='#{regId}')
+		input(class='ccapCode' name='ccapCode' type='text' placeholder='输入验证码')
+		a.submit 提交
+	include footer
+	script.
+		require(['reg'],function(reg){
+
+		})

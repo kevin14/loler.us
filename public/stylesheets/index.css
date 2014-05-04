@@ -1,0 +1,38 @@
+.playerinfo{
+	width: 1000px;
+	margin: 40px auto;
+	background-color: #333;
+	height: 300px;
+	color:#fff;
+	position: relative;
+}
+
+.playerinfo h3.title{
+	line-height: 40px;
+	text-indent: 1em;
+}
+.playerinfo .toggleShow{
+	position: absolute;
+	right: 10px;
+	bottom:10px;
+	color: #fff;
+}
+.playerinfo .playerRole{
+	width: 800px;
+	margin: 10px auto;
+	text-align: center;
+}
+.playerinfo .playerRole .serverName{
+
+}
+.playerinfo .playerRole .playerName{
+	margin-left: 10px;
+}
+.playerinfo .playerRole .submit{
+	display: inline-block;
+	width: 60px;
+	color: #fff;
+	background-color: #000;
+	text-align: center;
+
+}

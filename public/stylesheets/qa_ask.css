@@ -1,0 +1,38 @@
+.content{
+	width: 1000px;
+	margin: 20px auto;
+}
+.ask-box{
+	width: 760px;
+}
+.ask-box .ask-type a{
+	display: inline-block;
+	width: 60px;
+	cursor: pointer;
+	height: 30px;
+	line-height: 30px;
+	text-align: center;
+	margin-left: 10px;
+}
+.ask-box .ask-type a.selected{
+	display: inline-block;
+	width: 60px;
+	cursor: pointer;
+	color:#fff;
+	background-color: red;
+	height: 30px;
+	line-height: 30px;
+	text-align: center;
+	margin-left: 10px;
+}
+.ask-box .ask-textarea{
+	width: 600px;
+}
+.ask-box .submit{
+	display: block;
+	width: 60px;
+	height: 30px;
+	text-align: center;
+	line-height: 30px;
+	cursor: pointer;
+}
