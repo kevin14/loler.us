@@ -1,6 +1,8 @@
 var mQuestion = require('../m/question'),
     res = require('./response'),
-    utils = require('./utils');
+    cUser = require('./users'),
+    utils = require('./utils'),
+    ep = require('eventproxy');
 
 
 function Question(question) {
@@ -26,7 +28,6 @@ Question.prototype.create = function(next) {
             response.res_msg = '数据库异常';
             console.log(err);
         } else {
-            //注册成功！
             response.res_msg = '发布成功！';
             response.res_body = {
                 qid:data.insertId
@@ -37,7 +38,7 @@ Question.prototype.create = function(next) {
     });
 }
 
-Question.get_questions_list = function(begin,length,next){
+Question.getQuestionsList = function(begin,length,next){
     var response = new res();
     mQuestion.get_questions_list(begin,length,function(err,rs){
         if (err) {
@@ -47,8 +48,47 @@ Question.get_questions_list = function(begin,length,next){
         }else{
             response.res_body = rs;
         }
-
         return next(response);
+    })
+}
+
+Question.getQuestionsHotList = function(begin,length,next){
+    var response = new res();
+    mQuestion.get_questions_hot_list(begin,length,function(err,rs){
+        if (err) {
+            response.res_code = 9;
+            response.res_msg = '数据库异常';
+            console.log(err);
+        }else{
+            response.res_body = rs;
+        }
+        return next(response);
+    })
+}
+
+Question.getQuestionById = function(qid,next){
+    var response = new res();
+    mQuestion.get_question_by_id(qid,function(err,rs){
+        if (err) {
+            response.res_code = 9;
+            response.res_msg = '数据库异常';
+            return next(response);
+        }else{
+            if (rs.length > 0) {
+                var uid = rs[0].uid;
+                response.res_body = rs[0];
+                cUser.getUserById(uid,function(data){
+                    response.res_body.email = data.res_body.email;
+                    response.res_body.username = data.res_body.username;
+                    response.res_body.avatarUrl = data.res_body.avatarUrl;
+                    return next(response);
+                })
+            }else{
+                response.res_code = 0;
+                response.res_msg = '404'
+                return next(response);
+            }
+        }
     })
 }
 

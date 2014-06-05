@@ -1,38 +1,192 @@
+.wrapper{
+	width: 900px;
+}
 .playerinfo{
-	width: 1000px;
-	margin: 40px auto;
-	background-color: #333;
-	height: 300px;
-	color:#fff;
-	position: relative;
-}
 
-.playerinfo h3.title{
-	line-height: 40px;
-	text-indent: 1em;
-}
-.playerinfo .toggleShow{
-	position: absolute;
-	right: 10px;
-	bottom:10px;
-	color: #fff;
 }
 .playerinfo .playerRole{
-	width: 800px;
-	margin: 10px auto;
+	width: 700px;
 	text-align: center;
+	float: left;
+	display: none;
+}
+.playerinfo .playerRole .title{
+	line-height: 40px;
 }
 .playerinfo .playerRole .serverName{
-
+	width: 120px;
+}
+.playerinfo .playerRole .serverName option{
 }
 .playerinfo .playerRole .playerName{
 	margin-left: 10px;
+	border-radius: 2px;
+	border: none;
+	height: 30px;
+	text-indent: 5px;
+	outline: none;
 }
 .playerinfo .playerRole .submit{
+	height: 30px;
+	line-height: 30px;
 	display: inline-block;
 	width: 60px;
-	color: #fff;
-	background-color: #000;
+	background-color: #f2f2f2;
+	cursor: pointer;
 	text-align: center;
+	border-radius: 2px;
+	color:#444;
+	margin-left: 10px;
+}
+.player_box{
+}
+.player_box .player_basic_info{
+	height: 160px;
+	width: 150px;
+	border-right: 1px solid #888;
+	float: left;
+	margin-left: 20px;
+	position: relative;
+}
+.player_box .player_basic_info .playername{
+	margin-left: 10px;
+}
+.player_box .player_basic_info .player_avater{
+	width: 40px;
+	height: 40px;
+}
+.player_box .player_basic_info .level_box{
+	position: absolute;
+	font-size: 12px;
+	top: 0;
+	left: 40px;
+}
+.player_box .player_basic_info .level_box span{
+	margin-left: 10px;
+}
+.player_box .player_basic_info .zzl{
+	margin-top: 10px;
+}
+.player_box .player_basic_info .zzl,.player_box .player_basic_info .ftime{
+	font-size: 12px;
+	line-height: 20px;
+}
+.player_box .player_basic_info .zzl span,.player_box .player_basic_info .ftime span{
+	margin-left: 10px;
+}
+.player_box .player_fight_info{
+	float: left;
+	height: 160px;
+	width: 510px;
+	margin-left: 10px;
+	font-size: 12px;
+}
+.player_fight_info .nav{
+	height: 20px;
+}
+.player_fight_info .nav li{
+	float: left;
+}
+.player_fight_info .nav li a{
+	display: inline-block;
+	padding: 0 10px;
+	height: 20px;
+	line-height: 20px;
+	border-radius: 4px;
+	text-align: center;
+	margin-right: 10px;
+	cursor: pointer;
+}
+.player_fight_info .nav li a.cur{
+	background-color: #f00;
+}
+.player_fight_info .nav li a:hover{
+	background-color: #f00;
+}
+.player_fight_info .ppzj{
+	width: 508px;
+	height: 130px;
+	background-color: rgba(255,255,255,.2);
+	border-radius: 4px;
+	margin-top: 10px;
+	line-height: 30px;
+	/*display: none;*/
+}
+.player_fight_info .ppzj label{
+	display: inline-block;
+	width: 60px;
+	margin-left: 20px;
+}
+.player_fight_info .ppzj .season_box span{
+	display: inline-block;
+	margin-left: 10px;
+}
 
+.player_fight_info .pwzj{
+	width: 508px;
+	height: 130px;
+	background-color: rgba(255,255,255,.2);
+	border-radius: 4px;
+	margin-top: 10px;
+	display: none;
+}
+.player_fight_info .pwzj .season_box{
+	float: left;
+	width: 50%;
+	text-align: center;
+	line-height: 20px;
+}
+.player_fight_info .pwzj .season_box div{
+	text-align: left;
+}
+.player_fight_info .pwzj .season_box label{
+	display: inline-block;
+	width: 60px;
+	margin-left: 80px;
+}
+.player_fight_info .pwzj .season_box span{
+	display: inline-block;
+	margin-left: 10px;
+}
+.index_flow_box{
+	width: 700px;
+	color:#f2f2f2;
+	border-radius: 4px;
+	background-color: rgba(51,51,51,0.7);
+	float: left;
+	padding: 20px 0;
+	min-height: 160px;
+}
+.index_flow{
+	margin-top: 30px;
+	overflow: hidden;
+}
+.index_flow .loler_logo{
+	width: 160px;
+	height: 200px;
+	float: left;
+}
+.title_box{
+	float: left;
+	height: 200px;
+	width: 160px;
+	padding-left: 15px;
+}
+.title_box .icons_big{
+	font-size: 30px;
+}
+.title_box .icons_small{
+	font-size: 20px;
+	margin-left: 5px;
+}
+.title_box .desc{
+	font-size: 18px;
+	margin-left: 5px;
+	line-height: 30px;
+}
+.title_box .go_link{
+	color: #444;
+}
+.qa_title_box{
+	text-align: left;
 }

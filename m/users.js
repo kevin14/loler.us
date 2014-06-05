@@ -15,7 +15,13 @@ exports.newUser = function(data, next) {
     })
 }
 
-exports.selectOne = function(data,next){
+exports.get_user_by_id = function(uid,next){
+    db.select_by_id(uid,table_name,function(err,data){
+        return next(err,data);
+    })
+}
+
+exports.login = function(data,next){
     var query = 'SELECT * FROM '+table_name+' WHERE username="'+data.username+'" AND password="'+data.password+'"';
     db.query(query,function(err,reslut){
         return next(err,reslut);

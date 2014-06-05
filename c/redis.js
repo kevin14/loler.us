@@ -2,6 +2,7 @@ var redis = require('redis'),
     client = null;
 
 // redis.debug_mode = true;
+// CLient 8 user表
 
 
 module.exports.client = (function() {
@@ -9,7 +10,6 @@ module.exports.client = (function() {
         return client;
     } else {
         client = redis.createClient(6379,'127.0.0.1');
-        client.select(15, redis.print);
         client.on("error", function(err) {
             console.log("Error " + err);
         });

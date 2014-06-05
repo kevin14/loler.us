@@ -1,17 +1,23 @@
 extends layout
 block content
 	include header
-	div.content
-		div.nav
-			a.btn-new 最新
-			a.btn-hot 最热
-			a.btn-ask 我要提问
-		div.question-list
-			each question, i in questions
-				div.question-box
-					span #{question.uid}
-					span #{question.content}
-					span #{question.type}
+	div.content_wrapper
+		div.question_wrapper
+			div.nav
+				a.btn-new 最新
+				a.btn-hot 最热
+				a.btn-ask 我要提问
+			div.question-list
+				each question, i in questions
+					div.question-box.clearfix
+						div.user_box
+							img.user_avatar(src="#{question.avatarUrl}" title='#{question.username}')
+						div.question_content
+							a(class='question-link' href='http://loler.us:4000/question?qid=#{question.id}') #{question.content}
+							div.social_box
+								span.icon-bubble3.icon(title='回复') #{question.replytimes}
+								span.icon-paperplane.icon(title='分享') #{question.sharetimes}
+								span.icon-like.icon(title='有用') #{question.uptimes}
 	include footer
 	script.
 		require(['qa'], function(index) {

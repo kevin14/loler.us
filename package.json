@@ -21,6 +21,7 @@
     "validator":"*",
     "sanitizer":"*",
     "redis":"*",
-    "hiredis":"*"
+    "hiredis":"*",
+    "underscore":"*"
   }
 }

@@ -76,6 +76,7 @@ router.post('/postLogin', function(req, res) {
     }
     
     Users.login(loginData, function(data) {
+        utils.setCookies(res,data);
         res.send(data);
     })
 })

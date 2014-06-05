@@ -1,20 +1,27 @@
 div(class='header')
-	div(class='wrapper')
+	div(class='header_wrapper')
 		div(class='logo')
 		div(class='nav')
 			ul(class='nav-ul')
 				li
-					a(class='index' href='/') 首页
+					a.icon-home.icons(class='index' href='/')
 				li
-					a(class='chat' href='/qa') LoL问答
+					a.icon-question.icons(class='chat' href='/qa')
 				li
-					a(class='chat' href='/chat') 交流Online
+					a.icon-bubbles.icons(class='chat' href='/chat')
 				li
-					a(class='story' href='/story') 故事/心得
+					a.icon-book.icons(class='story' href='/story')
 				li
-					a(class='gallary' href='/gallery') 画廊/图片
-		div(class='userbox')
-			a(class='userinfo') kevin14
-			div(class='box-btns-wrapper')
-				a(class='box-btns settings') 设置
-				a(class='box-btns logout') 退出
+					a.icon-images.icons(class='gallary' href='/gallery')
+		div.userbox
+			div.manage-box-unlogin
+				a(class='box-btns login' href='/users/login') 登录
+				a(class='box-btns reg' href='/users/reg') 注册
+			div.manage-box-login
+				a(class='box-btns username') 未登录
+				a(class='box-btns infos') 消息
+				a(class='box-btns set-btn') 设置
+				div.settings
+					a.user-center 个人设置
+					a.logout 退出
+

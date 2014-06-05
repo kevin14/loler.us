@@ -59,13 +59,10 @@ exports.update_by_id = function(update_data, id, table_name) {
 }
 
 //根据id查询数据
-exports.select_by_id = function(id, table_name) {
-    var cmd = "SELECT * FROM " + table_name + " WHERE id= " + id;
+exports.select_by_id = function(id, table_name,next) {
+    var cmd = "SELECT * FROM " + table_name + " WHERE id=" + id;
     conn.query(cmd, function(err, rs, fields) {
-        if (err) {
-            return false;
-        };
-        return rs;
+        return next(err,rs);
     })
 }
 

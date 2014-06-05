@@ -7,14 +7,12 @@ router.get('/', function(req, res) {
 
     var begin = 0;
     length = 30;
-    Question.get_questions_list(begin, length, function(response) {
+    Question.getQuestionsList(begin, length, function(response) {
         if (response.res_code != 0) {
-
             var renderData = {
                 curPage: 'qa',
                 questions: response.res_body
             }
-            console.log(renderData.questions);
             res.render('qa', renderData);
 
         } else {

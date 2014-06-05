@@ -6,6 +6,8 @@ var ccap = require('ccap')(),
     client = require('./redis').client,
     redis = require('./redis').redis;
 
+var SECRET_STRING = "kevin14isgreat";
+
 //验证码工具
 exports.ccap = function(str) {
     var captcha = ccap({
@@ -32,25 +34,45 @@ exports.ccap = function(str) {
 }
 
 //得到accessToken 加密规则在这里
-exports.makeAccessToken = function(uid) {
+exports.makeAccessToken = function(data) {
+
+    client.select(8);
     var time = new Date().getTime();
-    var token = md5(uid + time + 'kevin14isgreat');
-    client.hmset('users',token, uid,redis.print);
+    var token = md5(data.uid + time + SECRET_STRING);
+    client.set(token, JSON.stringify(data), redis.print);
+    client.expire(token,604800,redis.print);
     return token;
+
 }
 
 exports.getAccessToken = function(uid) {
 
 }
 
-exports.getUidByToken = function(token) {
-    client.hmget('users',token,function(err,value){
-        return value;
+exports.getUidByToken = function(token, next) {
+    client.select(8);
+    client.get(token, function(err, value) {
+        return next(JSON.parse(value).uid);
+    });
+}
+
+exports.getInfoByToken = function(token, next) {
+    client.select(8);
+    client.get(token, function(err, value) {
+        return next(JSON.parse(value));
     });
 }
 
 exports.removeUidByToken = function(token) {
-    
+
+}
+
+
+exports.setCookies = function(res, data) {
+    var data = data.res_body;
+    for (var key in data) {
+        res.cookie(key,data[key],{maxAge:604800000});
+    }
 }
 
 /**
