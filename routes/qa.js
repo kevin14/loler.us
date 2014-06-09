@@ -4,14 +4,15 @@ var express = require('express'),
     Question = require('../c/question');
 
 router.get('/', function(req, res) {
-
-    var begin = 0;
-    length = 30;
-    Question.getQuestionsList(begin, length, function(response) {
+    var pageId = req.query.id || 1;
+    var begin = 0 + (pageId-1) * 20;
+    Question.getQuestionsList(begin, 30, function(response) {
         if (response.res_code != 0) {
             var renderData = {
                 curPage: 'qa',
-                questions: response.res_body
+                pageId:pageId,
+                pageCount:~~response.res_body.count/20,
+                questions: response.res_body.questions
             }
             res.render('qa', renderData);
 

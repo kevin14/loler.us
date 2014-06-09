@@ -1,4 +1,5 @@
 extends layout
+include mixins
 block content
 	include header
 	div.content_wrapper
@@ -15,9 +16,11 @@ block content
 						div.question_content
 							a(class='question-link' href='http://loler.us:4000/question?qid=#{question.id}') #{question.content}
 							div.social_box
+								span.ctime #{question.ctime}
 								span.icon-bubble3.icon(title='回复') #{question.replytimes}
 								span.icon-paperplane.icon(title='分享') #{question.sharetimes}
 								span.icon-like.icon(title='有用') #{question.uptimes}
+			+pages(pageId,pageCount,'http://loler.us:4000/qa')
 	include footer
 	script.
 		require(['qa'], function(index) {

@@ -75,6 +75,23 @@ exports.setCookies = function(res, data) {
     }
 }
 
+//根据时间戳获得时间字符串 return string
+//时间暂时分为精确时间和刚刚 刚刚即10分钟内的发布
+exports.getTime = function(timeStamp){
+    if (typeof timeStamp !== 'number') {
+        return false;
+    };
+    var date = new Date();
+    var thatTime = new Date(timeStamp);
+    var currentTime = ~~ (date.getTime()/1000);
+
+    if (currentTime - timeStamp < 600) {
+        return "刚刚";
+    }else{
+        return  thatTime.getYear()+'-'+(thatTime.getMonth()+1)+'-'+thatTime.getDate()+' '+thatTime.getHours()+':'+thatTime.getMinutes();       
+    }
+}
+
 /**
  * [继承]
  * @return 让o1继承o2

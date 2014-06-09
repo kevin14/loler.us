@@ -30,6 +30,7 @@ select {
     overflow:hidden;
     float: left;
     width: 900px;
+    padding-bottom: 60px;
 }
 .header {
     position:fixed;
@@ -128,4 +129,31 @@ select {
     width: 100px;
 }
 .header_wrapper .nav ul li a:hover {
+}
+
+/*mixins*/
+
+/*公用分页css mixin pages*/
+.global-pages{
+    background-color: rgba(0,0,0,0.4);
+    border-radius: 4px;
+    padding: 8px 10px;
+    margin-left: 90px;
+    margin-right: 20px;
+}
+.global-pages a{
+    display: inline-block;
+    padding: 0 5px;
+    height: 20px;
+    line-height: 20px;
+    font-size: 12px;
+    text-align: center;
+    border-radius: 2px;
+    margin-right: 6px;
+    background-color: #f2f2f2;
+    cursor: pointer;
+}
+.global-pages a.cur{
+    background-color: #f00;
+    color: #fff;
 }

@@ -97,14 +97,9 @@ exports.query = function(query,next) {
 }
 
 exports.get_count = function(table_name, callback) {
-    conn = mysql.createConnection(dbConnInfo);
     var cmd = "SELECT COUNT(0) FROM " + table_name;
-    conn.query(query, function(err, rs, fields) {
-        conn.end();
-        if (err) {
-            return false;
-        };
-        return callback(rs);
+    conn.query(cmd, function(err, rs, fields) {
+        return callback(err,rs[0]['COUNT(0)']);
     })
 }
 
